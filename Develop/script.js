@@ -10,7 +10,7 @@ let concatinatedArrayPassword = []
 let randomLowercaseAlphabet = Math.floor(Math.random()*lowercaseAlphabet.length);
 let randomUppercaseAlphabet = Math.floor(Math.random()*uppercaseAlphabet.length);
 let randomNumbers = Math.floor(Math.random()*numbers.length);
-let randomSpecialCharacter =Math.floor(Math.random()*specialCharacters.length);
+let randomSpecialCharacter = Math.floor(Math.random()*specialCharacters.length);
 
 // Write password to the #password input
 function writePassword() {
@@ -33,16 +33,16 @@ generateBtn.addEventListener("click", writePassword);
 let PasswordLength = prompt("What length would you like your password to be? Please pick a number 8-128.");
 console.log(PasswordLength);
 
-let choiceForLowercaseLetters = prompt("Would you like to include lowercase letters in your password? Please type 'Y' for yes or 'N' for no.")
+let choiceForLowercaseLetters = confirm("Would you like to include lowercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.")
 console.log(choice);
 
-let choiceForUppercaseLetters = prompt("Would you like to include uppercase letters in your password? Please type 'Y' for yes or 'N' for no.")
+let choiceForUppercaseLetters = confirm("Would you like to include uppercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.")
 console.log(thirdPasswordChoice);
 
-let choiceForNumbers = prompt("Would you like to include numbers in your password? Please type 'Y' for yes or 'N' for no.")
+let choiceForNumbers = confirm("Would you like to include numbers in your password? Please select 'OK' for yes or 'Cancel' for no.")
 console.log(fourthPasswordChoice);
 
-let choiceForSpecialCharacters = prompt("Would you like to include special characters in your password? Please type 'Y' for yes or 'N' for no.")
+let choiceForSpecialCharacters = confirm("Would you like to include special characters in your password? Please select 'OK' for yes or 'Cancel' for no.")
 console.log(fifthPasswordChoice);
 
 if (choiceForLowercaseLetters === true) {
