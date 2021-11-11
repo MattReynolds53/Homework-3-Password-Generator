@@ -36,6 +36,9 @@ if (passwordLength > 128) {
   return "Password too long. Please enter a valid number between 8-128.";
 }
 
+// if (passwordLength )
+// try to work in .valueAsANumber thing
+
 let choiceLowercase = confirm("Would you like to include lowercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.");
 console.log(choiceLowercase);
 
