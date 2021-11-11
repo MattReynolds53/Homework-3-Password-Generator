@@ -5,7 +5,7 @@ let lowercaseAlphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", 
 let uppercaseAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let specialCharacters = [")", "!", "@", "#", "$", "%", "^", "&", "*", "(", "-", "_", "+", "=", "[", "]", "{", "}", "`", "~"];
-let concatinatedArrayPassword = []
+
 
 let randomLowercaseAlphabet = Math.floor(Math.random()*lowercaseAlphabet.length);
 let randomUppercaseAlphabet = Math.floor(Math.random()*uppercaseAlphabet.length);
@@ -23,61 +23,50 @@ function writePassword() {
 
 function generatePassword() {
 
+  let concatArray = []
 
 let passwordLength = prompt("What length would you like your password to be? Please pick a number 8-128.");
 console.log(passwordLength);
 
-let choiceForLowercaseLetters = confirm("Would you like to include lowercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.");
-console.log(choiceForLowercaseLetters);
+let choiceLowercase = confirm("Would you like to include lowercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.");
+console.log(choiceLowercase);
 
-if (choiceForLowercaseLetters === true) {
-  concatinatedArrayPassword = [...lowercaseAlphabet, ...concatinatedArrayPassword]; //do the same thing you did here for all of them
+if (choiceLowercase === true) {
+  concatArray = [...lowercaseAlphabet, ...concatArray]; //do the same thing you did here for all of them
 } ;
-// else {
-//   concatinatedArrayPassword = [...concatinatedArrayPassword];
-// };
 
-let choiceForUppercaseLetters = confirm("Would you like to include uppercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.");
-console.log(choiceForUppercaseLetters);
+let choiceUppercase = confirm("Would you like to include uppercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.");
+console.log(choiceUppercase);
 
-if (choiceForUppercaseLetters === true) {
-  concatinatedArrayPassword = [...uppercaseAlphabet, ...concatinatedArrayPassword]; //do the same thing you did here for all of them
+if (choiceUppercase === true) {
+  concatArray = [...uppercaseAlphabet, ...concatArray]; //do the same thing you did here for all of them
 } ;
-// else {
-//   concatinatedArrayPassword = [...concatinatedArrayPassword];
-// };
 
-let choiceForNumbers = confirm("Would you like to include numbers in your password? Please select 'OK' for yes or 'Cancel' for no.");
-console.log(choiceForNumbers);
+let choiceNumbers = confirm("Would you like to include numbers in your password? Please select 'OK' for yes or 'Cancel' for no.");
+console.log(choiceNumbers);
 
-if (choiceForNumbers === true) {
-  concatinatedArrayPassword = [...numbers, ...concatinatedArrayPassword]; //do the same thing you did here for all of them
+if (choiceNumbers === true) {
+  concatArray = [...numbers, ...concatArray]; //do the same thing you did here for all of them
 } ;
-// else {
-//   concatinatedArrayPassword = [...concatinatedArrayPassword];
-// };
 
-let choiceForSpecialCharacters = confirm("Would you like to include special characters in your password? Please select 'OK' for yes or 'Cancel' for no.");
-console.log(choiceForSpecialCharacters);
+let choiceSpecial = confirm("Would you like to include special characters in your password? Please select 'OK' for yes or 'Cancel' for no.");
+console.log(choiceSpecial);
 
-if (choiceForSpecialCharacters === true) {
-  concatinatedArrayPassword = [...specialCharacters, ...concatinatedArrayPassword]; //do the same thing you did here for all of them
-} ;
-// else {
-//   concatinatedArrayPassword = [...concatinatedArrayPassword];
-// }
+if (choiceSpecial === true) {
+  concatArray = [...specialCharacters, ...concatArray]; //do the same thing you did here for all of them
+} ; 
 
 // If I have my if statements separated, will that still concatinate the appropriate arrys based on the user selections for the confirms? Or should I compile my separated if statements into one if, else if, else statement?
-console.log(concatinatedArrayPassword)
+console.log(concatArray)
 
 let finalPassword = "";
 
 
 // let password = "";
 for (let i = 0; i < passwordLength; i++) {
-  let numberRandom = Math.floor(Math.random()*concatinatedArrayPassword.length);
-  finalPassword = finalPassword + concatinatedArrayPassword[numberRandom];
-  console.log(concatinatedArrayPassword[numberRandom]);
+  let numberRandom = Math.floor(Math.random()*concatArray.length);
+  finalPassword = finalPassword + concatArray[numberRandom];
+  console.log(concatArray[numberRandom]);
   //need to get all individual string into one combined strings (wihtin the For loop)
 }
 console.log(finalPassword)
