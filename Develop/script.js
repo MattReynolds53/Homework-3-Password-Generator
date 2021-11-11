@@ -24,45 +24,58 @@ function writePassword() {
 function generatePassword() {
 
 
-  return "generatePassword"; //you need to return your password at the end or else it will come back undefined. 
+  let PasswordLength = prompt("What length would you like your password to be? Please pick a number 8-128.");
+console.log(PasswordLength);
+;
+let choiceForLowercaseLetters = confirm("Would you like to include lowercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.")
+console.log(choiceForLowercaseLetters);
+
+if (choiceForLowercaseLetters === true) {
+  concatinatedArrayPassword = [...lowercaseAlphabet, ...concatinatedArrayPassword]; //do the same thing you did here for all of them
+} else {
+  concatinatedArrayPassword = [...concatinatedArrayPassword];
+};
+
+let choiceForUppercaseLetters = confirm("Would you like to include uppercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.");
+console.log(choiceForUppercaseLetters);
+
+if (choiceForUppercaseLetters === true) {
+  concatinatedArrayPassword = [...uppercaseAlphabet, ...concatinatedArrayPassword]; //do the same thing you did here for all of them
+} else {
+  concatinatedArrayPassword = [...concatinatedArrayPassword];
+};
+
+let choiceForNumbers = confirm("Would you like to include numbers in your password? Please select 'OK' for yes or 'Cancel' for no.");
+console.log(choiceForNumbers);
+
+if (choiceForNumbers === true) {
+  concatinatedArrayPassword = [...numbers, ...concatinatedArrayPassword]; //do the same thing you did here for all of them
+} else {
+  concatinatedArrayPassword = [...concatinatedArrayPassword];
+};
+
+let choiceForSpecialCharacters = confirm("Would you like to include special characters in your password? Please select 'OK' for yes or 'Cancel' for no.");
+console.log(choiceForSpecialCharacters);
+
+if (choiceForSpecialCharacters === true) {
+  concatinatedArrayPassword = [...specialCharacters, ...concatinatedArrayPassword]; //do the same thing you did here for all of them
+} else {
+  concatinatedArrayPassword = [...concatinatedArrayPassword];
+}
+
+  return password; //you need to return your password at the end or else it will come back undefined. 
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-let PasswordLength = prompt("What length would you like your password to be? Please pick a number 8-128.");
-console.log(PasswordLength);
-
-let choiceForLowercaseLetters = confirm("Would you like to include lowercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.")
-console.log(choice);
-
-let choiceForUppercaseLetters = confirm("Would you like to include uppercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.")
-console.log(thirdPasswordChoice);
-
-let choiceForNumbers = confirm("Would you like to include numbers in your password? Please select 'OK' for yes or 'Cancel' for no.")
-console.log(fourthPasswordChoice);
-
-let choiceForSpecialCharacters = confirm("Would you like to include special characters in your password? Please select 'OK' for yes or 'Cancel' for no.")
-console.log(fifthPasswordChoice);
-
-if (choiceForLowercaseLetters === true) {
-  concatinatedArrayPassword = [...lowercaseAlphabet, ...concatinatedArrayPassword]; //do the same thing you did here for all of them
-} else {
-  concatinatedArrayPassword = [...concatinatedArrayPassword];
-}
-
-if (choiceForLowercaseLetters === true) {
-  concatinatedArrayPassword = [...lowercaseAlphabet, ...concatinatedArrayPassword]; //do the same thing you did here for all of them
-} else {
-  concatinatedArrayPassword = [...concatinatedArrayPassword];
-}
 
 
 
 
-let password = "";
-for (let i = 0; i < 128; i++) {
+// let password = "";
+// for (let i = 0; i < 128; i++) {
   
   
-}
+// }
 
