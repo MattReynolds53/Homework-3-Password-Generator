@@ -28,6 +28,14 @@ function generatePassword() {
 let passwordLength = prompt("What length would you like your password to be? Please pick a number 8-128.");
 console.log(passwordLength);
 
+if (passwordLength < 8) {
+  return "Password too short. Please enter a valid number between 8-128";
+}
+
+if (passwordLength > 128) {
+  return "Password too long. Please enter a valid number between 8-128.";
+}
+
 let choiceLowercase = confirm("Would you like to include lowercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.");
 console.log(choiceLowercase);
 
