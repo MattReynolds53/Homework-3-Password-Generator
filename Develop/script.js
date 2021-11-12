@@ -36,53 +36,47 @@ if (passwordLength > 128) {
   return "Password too long. Please enter a valid number between 8-128.";
 }
 
-// if (passwordLength )
-// try to work in .valueAsANumber thing
-
 let choiceLowercase = confirm("Would you like to include lowercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.");
 console.log(choiceLowercase);
 
 if (choiceLowercase === true) {
-  concatArray = [...lowercaseAlphabet, ...concatArray]; //do the same thing you did here for all of them
+  concatArray = [...lowercaseAlphabet, ...concatArray]; 
 } ;
 
 let choiceUppercase = confirm("Would you like to include uppercase letters in your password? Please select 'OK' for yes or 'Cancel' for no.");
 console.log(choiceUppercase);
 
 if (choiceUppercase === true) {
-  concatArray = [...uppercaseAlphabet, ...concatArray]; //do the same thing you did here for all of them
+  concatArray = [...uppercaseAlphabet, ...concatArray]; 
 } ;
 
 let choiceNumbers = confirm("Would you like to include numbers in your password? Please select 'OK' for yes or 'Cancel' for no.");
 console.log(choiceNumbers);
 
 if (choiceNumbers === true) {
-  concatArray = [...numbers, ...concatArray]; //do the same thing you did here for all of them
+  concatArray = [...numbers, ...concatArray]; 
 } ;
 
 let choiceSpecial = confirm("Would you like to include special characters in your password? Please select 'OK' for yes or 'Cancel' for no.");
 console.log(choiceSpecial);
 
 if (choiceSpecial === true) {
-  concatArray = [...specialCharacters, ...concatArray]; //do the same thing you did here for all of them
+  concatArray = [...specialCharacters, ...concatArray]; 
 } ; 
 
-// If I have my if statements separated, will that still concatinate the appropriate arrys based on the user selections for the confirms? Or should I compile my separated if statements into one if, else if, else statement?
 console.log(concatArray)
 
 let finalPassword = "";
 
 
-// let password = "";
 for (let i = 0; i < passwordLength; i++) {
   let numberRandom = Math.floor(Math.random()*concatArray.length);
   finalPassword = finalPassword + concatArray[numberRandom];
   console.log(concatArray[numberRandom]);
-  //need to get all individual string into one combined strings (wihtin the For loop)
 }
 console.log(finalPassword)
 
-  return finalPassword; //you need to return your password at the end or else it will come back undefined. 
+  return finalPassword;  
 }
 
 // Add event listener to generate button
